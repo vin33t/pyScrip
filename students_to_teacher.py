@@ -19,3 +19,49 @@ tyler = {
 }
 
 
+# Defining functions and methods
+def average(x):
+    total = sum(x)
+    aver = float(total) / len(x)
+    return aver
+
+
+def get_average(student):
+    homework = average(student["homework"])
+    quizzes = average(student["quizzes"])
+    tests = average(student["tests"])
+    return 0.1 * homework + 0.3 * quizzes + 0.6 * tests
+
+
+def get_letter_grade(score):
+    if score >= 90:
+        return 'A'
+    elif score >= 80:
+        return 'B'
+    elif score >= 70:
+        return 'C'
+    elif score >= 60:
+        return 'D'
+    else:
+        return 'F'
+
+
+print
+get_average(lloyd)
+print
+get_letter_grade(get_average(lloyd))
+
+students = [lloyd, alice, tyler]
+
+
+def class_average(students):
+    results = []
+    for student in students:
+        results.append(get_average(student))
+    return average(results)
+
+# displaying the calculated marks average and grade
+print
+class_average(students)
+print
+get_letter_grade(class_average(students))
