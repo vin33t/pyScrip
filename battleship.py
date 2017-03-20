@@ -1,3 +1,4 @@
+#import randint method
 from random import randint
 
 from pip._vendor.distlib.compat import raw_input
@@ -6,7 +7,7 @@ board = []
 
 for x in range(5):
     board.append(["O"] * 5)
-
+#Defining functions
 
 def print_board(board):
     for row in board:
@@ -32,6 +33,8 @@ print
 ship_row
 print
 ship_col
+
+#loop to get input from user 4 times and displaying output accordingly
 
 for i in range(4):
     print
