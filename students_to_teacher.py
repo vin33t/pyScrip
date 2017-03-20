@@ -1,3 +1,4 @@
+import os
 # Dictionaries for students
 lloyd = {
     "name": "Lloyd",
@@ -46,10 +47,8 @@ def get_letter_grade(score):
         return 'F'
 
 
-print
-get_average(lloyd)
-print
-get_letter_grade(get_average(lloyd))
+print(get_average(lloyd))
+print(get_letter_grade(get_average(lloyd)))
 
 students = [lloyd, alice, tyler]
 
@@ -61,7 +60,19 @@ def class_average(students):
     return average(results)
 
 # displaying the calculated marks average and grade
-print
-class_average(students)
-print
-get_letter_grade(class_average(students))
+print(class_average(students))
+print(get_letter_grade(class_average(students)))
+
+#Asking the users if they want to run the file again or Go to main men or Exit the Program
+print("Enter 0 to Play again or 1 to got to Main Menu or 2 to exit or Terminate the program")
+option_selected_by_user=int(input("My option is : "))
+if option_selected_by_user==0:
+    print("Battleship Will be started again")
+    os.system('python students_to_teacher.py')
+elif option_selected_by_user==1:
+    print("Redirecting to Main Menu")
+    os.system('python main.py')
+elif option_selected_by_user==2:
+    exit()
+else:
+    os.system('python main.py')
