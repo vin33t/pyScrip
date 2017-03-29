@@ -1,43 +1,29 @@
 import os
 #import randint method
 from random import randint
-
 from pip._vendor.distlib.compat import raw_input
-
 board = []
-
 for x in range(5):
     board.append(["O"] * 5)
 #Defining functions
-
 def print_board(board):
     for row in board:
         print(" ".join(row))
-
-
 print("Let's play Battleship!")
 print_board(board)
-
-
 def random_row(board):
     return randint(0, len(board) - 1)
-
-
 def random_col(board):
     return randint(0, len(board[0]) - 1)
-
 ship_row = random_row(board)
 ship_col = random_col(board)
 print(ship_row)
 print(ship_col)
-
 #loop to get input from user 4 times and displaying output accordingly
-
 for i in range(4):
     print("Turn ", i + 1)
     guess_row = int(raw_input("Guess Row:"))
     guess_col = int(raw_input("Guess Col:"))
-
     if guess_row == ship_row and guess_col == ship_col:
         print("Congratulations! You sunk my battleship!")
         break
@@ -52,7 +38,6 @@ for i in range(4):
             if (i == 3):
                 print("Game Over")
         print_board(board)
-
 #Asking the users if they want to run the file again or Go to main men or Exit the Program
 print("Enter 0 to Play again or 1 to got to Main Menu or 2 to exit or Terminate the program")
 option_selected_by_user=int(input("My option is : "))
